@@ -5,7 +5,7 @@
 def sum(arr)
   # YOUR CODE HERE
   s = 0
-  arr.each {|v| s = s+v}
+  arr.each {|i| s = s+i}
   s
 end
 
@@ -36,15 +36,20 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-  puts "Hello, "+name
+  "Hello, "+name
 end
 
 def starts_with_consonant?(string)
   # YOUR CODE HERE
+  return true if /^[[a-z&&[^aeiou]],[A-Z&&[^AEIOU]]]/.match(string)
+  return false
 end
 
 def binary_multiple_of_4?(string)
   # YOUR CODE HERE
+  return true if string=="0"
+  return true if /^[0,1]*00$/.match(string)
+  return false
 end
 
 # Part 3
