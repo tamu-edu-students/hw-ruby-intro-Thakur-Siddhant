@@ -20,11 +20,15 @@ def sum_to_n?(arr, number)
   # YOUR CODE HERE
   return false if arr.empty? or arr.length == 1
 
-  for i in 0...arr.length do
-    for j in i+1...arr.length do
-      return true if arr[i] + arr[j] == number
+  h = Hash.new
+
+  arr.each{|i|
+    if h.key? i
+      return true
+    else
+      h[number - i] = 0
     end
-  end
+  }
   return false
 end
 
