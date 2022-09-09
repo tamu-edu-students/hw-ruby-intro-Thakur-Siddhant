@@ -4,20 +4,35 @@
 
 def sum(arr)
   # YOUR CODE HERE
+  s = 0
+  arr.each {|v| s = s+v}
+  s
 end
 
 def max_2_sum(arr)
   # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr[0] if arr.length==1
+  arr.sort.last(2).sum
 end
 
 def sum_to_n?(arr, number)
   # YOUR CODE HERE
+  return false if arr.empty? or arr.length == 1
+
+  for i in 0...arr.length do
+    for j in i+1...arr.length do
+      return true if arr[i] + arr[j] == number
+    end
+  end
+  return false
 end
 
 # Part 2
 
 def hello(name)
   # YOUR CODE HERE
+  puts "Hello, "+name
 end
 
 def starts_with_consonant?(string)
